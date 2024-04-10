@@ -1,0 +1,523 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/Button.astro";
+
+import VueIcon from "../icons/Vue.astro";
+import NextIcon from "../icons/Next.astro";
+import AstroIcon from "../icons/Astro.astro";
+import MongoIcon from "../icons/Mongo.astro";
+import NodeIcon from "../icons/Node.astro";
+import DockerIcon from "../icons/Docker.astro";
+import SvelteIcon from "../icons/Svelte.astro";
+import ReactIcon from "../icons/React.astro";
+import TailwindIcon from "../icons/Tailwind.astro";
+import AmazonWebServicesIcon from "../icons/AmazonWebServices.astro";
+import RedisIcon from "../icons/Redis.astro";
+import PHPIcon from "../icons/PHP.astro";
+import LaravelIcon from "../icons/Laravel.astro";
+import MysqlIcon from "../icons/Mysql.astro";
+import CodeIgniterIcon from "../icons/CodeIgniter.astro";
+import ExpressIcon from "../icons/Express.astro";
+import StripeIcon from "../icons/Stripe.astro";
+import WorldIcon from "../icons/World.astro"
+import ThreejsIcon from '../icons/Threejs.astro'
+import SocketsIcon from '../icons/Socketsio.astro'
+import GithubIcon from '../icons/Github.astro'
+import GmailIcon from '../icons/Gmail.astro'
+import LinkedinIcon from '../icons/Linkedin.astro'
+
+import { v4 as uuidv4 } from "uuid";
+import { manifest } from "astro:ssr-manifest";
+import Github from "../icons/Github.astro";
+
+const TECHNOLOGIES = {
+	vue: {
+		name: "Vue",
+		icon: VueIcon,
+	},
+	next: {
+		name: "Next",
+		icon: NextIcon,
+	},
+	astro: {
+		name: "Astro",
+		icon: AstroIcon,
+	},
+	mongo: {
+		name: "Mongo",
+		icon: MongoIcon,
+	},
+	node: {
+		name: "Node",
+		icon: NodeIcon,
+	},
+	docker: {
+		name: "Docker",
+		icon: DockerIcon,
+	},
+	svelte: {
+		name: "Svelte",
+		icon: SvelteIcon,
+	},
+	react: {
+		name: "React",
+		icon: ReactIcon,
+	},
+	tailwind: {
+		name: "Tailwind",
+		icon: TailwindIcon,
+	},
+	aws: {
+		name: "Amazon Web Services",
+		icon: AmazonWebServicesIcon,
+	},
+	redis: {
+		name: "Redis",
+		icon: RedisIcon,
+	},
+	php: {
+		name: "PHP",
+		icon: PHPIcon,
+	},
+	laravel: {
+		name: "Laravel",
+		icon: LaravelIcon,
+	},
+	mysql: {
+		name: "MySQL",
+		icon: MysqlIcon,
+	},
+	codeigniter: {
+		name: "CodeIgniter",
+		icon: CodeIgniterIcon,
+	},
+	express: {
+		name: "Express",
+		icon: ExpressIcon,
+	},
+	stripe: {
+		name: "Stripe",
+		icon: StripeIcon,
+	},
+	three: {
+		name: 'Three.js',
+		icon: ThreejsIcon
+	},
+	sockets: {
+		name: 'Sockets',
+		icon: SocketsIcon
+	}
+};
+
+const EXPERIENCES = [
+	{
+		logo: "/images/driuz-iso.webp",
+		company: "Driuz",
+		job: "Desarrollador y Diseñador en Driuz",
+		date: "Enero 2022 - Actualmente",
+		description:
+			"Diseño de las funcionalidades y definición de los casos de uso de la aplicación. Desarrollo e implementación de las funcionalidades. Despliegue de la aplicación en producción. Administración y gestión de la base de datos. Diseño y desarrollo de la web del producto, posicionamiento SEO y diseño de landings.",
+		technologies: [
+			TECHNOLOGIES.vue,
+			TECHNOLOGIES.next,
+			TECHNOLOGIES.node,
+			TECHNOLOGIES.express,
+			TECHNOLOGIES.mongo,
+			TECHNOLOGIES.docker,
+			TECHNOLOGIES.react,
+			TECHNOLOGIES.astro,
+			TECHNOLOGIES.tailwind,
+			TECHNOLOGIES.svelte,
+			TECHNOLOGIES.aws,
+			TECHNOLOGIES.redis,
+			TECHNOLOGIES.stripe,
+		],
+	},
+	{
+		logo: "/images/acrelianews-iso.webp",
+		company: "Acrelia News",
+		job: "Desarrollador FullStack en Acrelia News",
+		date: "Febrero 2019 - Diciembre 2022",
+		description:
+			"Diseño, análisis e implementación de nuevas funcionalidades para producto final: envíos masivos de SMS marketing, verificador de listas de emails, automatización email marketing. Desarrollo de nuevas funcionalidades para clientes finales.",
+		technologies: [
+			TECHNOLOGIES.php,
+			TECHNOLOGIES.laravel,
+			TECHNOLOGIES.mysql,
+			TECHNOLOGIES.docker,
+			TECHNOLOGIES.redis,
+		],
+	},
+	{
+		id: 'firstjob',
+		logo: "/images/telera-iso.webp",
+		company: "Teleradiología avanzada",
+		job: "Desarrollador FullStack en Teleradiología Avanzada",
+		date: "Junio 2018 - Febrero 2019",
+		description:
+			"Implementación de nuevas funcionalidades. Soporte y mantenimiento de aplicación de teleradiología. Implementación de gestor de subida de pruebas médicas a través del navegador.",
+		technologies: [
+			TECHNOLOGIES.php,
+			TECHNOLOGIES.codeigniter,
+			TECHNOLOGIES.mysql,
+		],
+	},
+];
+
+const PROJECTS = [
+	{
+		title: 'SaaS para creadores de contenido y profesores · Driuz',
+		description: `
+			Driuz es el proyecto personal más importante de mi carrera como
+			desarrollador web. Son más de 2 años de desarrollo en los que he aprendido
+			muchísimas cosas, entre las que se encuentran: definir casos de uso, diseñar
+			pantallas en Figma, aprender a utilizar frameworks de frontend (Vue,
+			React, Next), codificación de video (ffmepg), diseño y desarrollo de API con Node,
+			bases de datos no relacionales (MongoDB), SEO, diseñar landings page, etc.
+			<br /><br />El proyecto se divide en 2 partes. La primera es el panel
+			de administración (Vue) donde los usuarios pueden crear su página web,
+			crear productos digitales como cursos online o video bajo demanda,
+			asignarles un precio y administrar sus clientes, entre otras muchas
+			cosas.
+			<br /><br />La segunda parte consiste en la web (Next), donde se
+			muestra todo lo que el usuario ha configurado en su panel de
+			administración, y es lo que el cliente utiliza para monetizar su
+			contenido, y donde sus usuarios van a registrarse y realizar compras.
+		`,
+		images: [
+			{
+				url: '/images/projects-driuz.webp',
+				alt: ''
+			},
+			{
+				url: '/images/projects-driuz-2.webp',
+				alt: ''
+			},
+			{
+				url: '/images/projects-driuz-3.webp',
+				alt: ''
+			},
+			{
+				url: '/images/projects-driuz-4.webp',
+				alt: ''
+			},
+			{
+				url: '/images/projects-driuz-5.webp',
+				alt: ''
+			},
+		],
+		links: {
+			web: 'https://driuz.com',
+			github: null,
+		},
+		technologies: [
+			TECHNOLOGIES.vue,
+			TECHNOLOGIES.next,
+			TECHNOLOGIES.node,
+			TECHNOLOGIES.express,
+			TECHNOLOGIES.mongo,
+			TECHNOLOGIES.docker,
+			TECHNOLOGIES.react,
+			TECHNOLOGIES.astro,
+			TECHNOLOGIES.tailwind,
+			TECHNOLOGIES.svelte,
+			TECHNOLOGIES.aws,
+			TECHNOLOGIES.redis,
+			TECHNOLOGIES.stripe,
+		],
+	},
+	{
+		title: 'Web de afiliados con Laravel · MilitarShop',
+		description: `
+			MilitarShop es un proyecto personal desarrollado con Laravel. Cuenta con un panel de administración desde donde se puede añadir productos, categorías y artículos del blog de forma visual e intuitiva. También cuenta con scripts de scraping para actualizar automáticamente los precios y las imágenes de los productos.
+		`,
+		images: [
+			{
+				url: '/images/militarshop-1.webp',
+				alt: ''
+			},
+			{
+				url: '/images/militarshop-2.webp',
+				alt: ''
+			},
+			{
+				url: '/images/militarshop-3.webp',
+				alt: ''
+			},
+			{
+				url: '/images/militarshop-4.webp',
+				alt: ''
+			},
+			{
+				url: '/images/militarshop-5.webp',
+				alt: ''
+			},
+		],
+		links: {
+			web: 'https://militar.shop',
+			github: null,
+		},
+		technologies: [
+			TECHNOLOGIES.php,
+			TECHNOLOGIES.laravel,
+			TECHNOLOGIES.mysql,
+			TECHNOLOGIES.aws
+		],
+	},
+	{
+		title: 'Pinball 3D Multijugador · PinWall',
+		description: `
+			Pinball fué el trabajo final realizado en parejas del Grado Superior de Desarrollo de Aplicaciones Web (30 días). El proyecto está desarrollado con Node.js, Sockets.io y Three.js. Se pueden crear nuevos escenarios de forma sencilla con Sketchup, y gracias al conversor se puede pasar los vértices a la librería de físicas (Plank.js). Cuenta con un modo multijugador, gracias a que las físicas corren en el servidor y un sistema de Ranking.
+		`,
+		images: [
+			{
+				url: '/images/pinwall-1.webp',
+				alt: ''
+			},
+			{
+				url: '/images/pinwall-2.webp',
+				alt: ''
+			},
+			{
+				url: '/images/pinwall-3.webp',
+				alt: ''
+			},
+			{
+				url: '/images/pinwall-4.webp',
+				alt: ''
+			},
+			{
+				url: '/images/pinwall-5.webp',
+				alt: ''
+			},
+		],
+		links: {
+			web: null,
+			github: 'https://github.com/sergiolamorda/PinWall',
+		},
+		technologies: [
+			TECHNOLOGIES.node,
+			TECHNOLOGIES.express,
+			TECHNOLOGIES.mongo,
+			TECHNOLOGIES.three,
+			TECHNOLOGIES.sockets,
+		],
+	}
+]
+---
+
+<BaseLayout>
+	<div class="flex flex-col w-full lg:w-[800px] mx-auto my-16 gap-4 items-center scroll-m-12">
+		<img class="rounded-full size-36" src="/images/sergio-lamorda.webp" />
+		<p class="text-xl lg:text-2xl">
+			¡Hola, soy <span class="text-blue-200/80">Sergio</span>! 👋🏻
+		</p>
+		<h1 class="text-3xl lg:text-5xl font-bold text-center">
+			Programador <span class="text-blue-200/80">FullStack</span>
+		</h1>
+		<p class="lg:text-lg text-pretty text-center">
+			Soy desarrollador web con <span class="text-blue-200/80 font-bold"
+				>+5 años de experiencia</span
+			>. Soy de Barcelona y me apasiona programar, aprender y seguir afrontando
+			nuevos retos.
+		</p>
+		<div class="flex">
+			<a href="#contact">
+				<Button>Contactar</Button>
+			</a>
+		</div>
+	</div>
+	<div id="experience" class="flex flex-col w-full lg:w-[800px] mx-auto my-28 scroll-m-12">
+		<h2 class="text-3xl lg:text-5xl uppercase text-blue-200/80 font-bold lg:text-center">
+			Experiencia<span class="text-white/80">.</span>
+		</h2>
+		<div class="flex flex-col mt-4 lg:mt-10 gap-12">
+			{
+				EXPERIENCES.map(
+					({ id, logo, company, job, date, description, technologies }) => (
+						<div id={id} class="flex flex-col gap-4">
+							<div class="flex flex-col lg:flex-row justify-between lg:items-center">
+								<div class="flex flex-row gap-2 items-center">
+									<img
+										src={logo}
+										alt={`Logo of ${company}`}
+										class="h-6 w-auto"
+									/>
+									<h4 class="text-lg lg:text-xl font-bold text-white/80">{job}</h4>
+								</div>
+								<div class="flex flex-row text-sm text-blue-100/60">{date}</div>
+							</div>
+							<p class="text-blue-100/60 text-sm text-pretty">{description}</p>
+							<div class="flex flex-col gap-2">
+								<h5 class="text-blue-100/80 text-sm">Tecnologías</h5>
+								<div class="flex flex-row flex-wrap gap-x-0.5 gap-y-2">
+									{technologies.map((tecnnology) => {
+										const tooltipId = uuidv4();
+										return (
+											<span class="flex items-center gap-1 bg-blue-200/75 text-blue-900/90 text-xs font-bold me-2 px-2 py-1 rounded-full dark:bg-blue-900 dark:text-blue-300">
+												<tecnnology.icon class="size-4" /> {tecnnology.name}
+											</span>
+										);
+									})}
+								</div>
+							</div>
+						</div>
+					),
+				)
+			}
+		</div>
+	</div>
+	<div id="projects" class="flex flex-col w-full lg:w-[800px] mx-auto my-28 scroll-m-12">
+		<h2 class="text-3xl lg:text-5xl uppercase text-blue-200/80 font-bold lg:text-center">
+			Proyectos<span class="text-white/80">.</span>
+		</h2>
+		<div class="flex flex-col mt-4 lg:mt-10 gap-14 lg:gap-20">
+			{PROJECTS.map((project) => (
+				<div class="flex flex-col gap-4">
+					<div class="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-4 text-white/80">
+						<h4 class="text-lg lg:text-xl font-bold">
+							{project.title}
+						</h4>
+						{project.links.web && (
+							<a href={project.links.web} target="_blank" class="group"><WorldIcon class="size-7 group-hover:scale-125 transition-all group-hover:text-white/90" /></a>
+						)}
+						{project.links.github && (
+							<a href={project.links.github} target="_blank" class="group"><GithubIcon class="size-7 group-hover:scale-125 transition-all group-hover:text-white/90" /></a>
+						)}
+					</div>
+					<p class="text-blue-100/60 text-sm text-pretty" set:html={project.description} />
+					<div class="flex flex-col gap-2">
+						<h5 class="text-blue-100/80 text-sm">Tecnologías</h5>
+						<div class="flex flex-row flex-wrap gap-x-0.5 gap-y-2">
+							{project.technologies.map((tecnnology) => {
+								return (
+									<span class="flex items-center gap-1 bg-blue-200/75 text-blue-900/90 text-xs font-bold me-2 px-2 py-1 rounded-full dark:bg-blue-900 dark:text-blue-300">
+										<tecnnology.icon class="size-4" /> {tecnnology.name}
+									</span>
+								);
+							})}
+						</div>
+					</div>
+					<div
+						id="default-carousel"
+						class="relative w-full"
+						data-carousel="static"
+					>
+						<div class="relative h-56 overflow-hidden rounded-lg md:h-[500px]">
+							{project.images.map(({ url, alt }) => (
+								<div class="hidden duration-500 ease-in-out" data-carousel-item>
+									<img
+										src={url}
+										class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+										alt={alt}
+									/>
+								</div>
+							))}
+						</div>
+						<div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+							{project.images.map((image, index) => (
+								<button
+									type="button"
+									class="w-3 h-3 rounded-full"
+									aria-current={index === 0 ? 'true' : 'false'}
+									aria-label={`Slide ${index + 1}`}
+									data-carousel-slide-to={index}
+								/>
+							))}
+						</div>
+						<button
+							type="button"
+							class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+							data-carousel-prev
+						>
+							<span
+								class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+							>
+								<svg
+									class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+									aria-hidden="true"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 6 10"
+								>
+									<path
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M5 1 1 5l4 4"></path>
+								</svg>
+								<span class="sr-only">Previous</span>
+							</span>
+						</button>
+						<button
+							type="button"
+							class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+							data-carousel-next
+						>
+							<span
+								class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+							>
+								<svg
+									class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+									aria-hidden="true"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 6 10"
+								>
+									<path
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="m1 9 4-4-4-4"></path>
+								</svg>
+								<span class="sr-only">Next</span>
+							</span>
+						</button>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+	<div id="about" class="flex flex-col w-full lg:w-[800px] mx-auto my-28 scroll-m-12">
+		<h2 class="text-3xl lg:text-5xl uppercase text-blue-200/80 font-bold lg:text-center">
+			Sobre mí<span class="text-white/80">.</span>
+		</h2>
+		<p class="text-blue-100/60 text-sm text-pretty mt-5">
+			Desde pequeño tenía claro que me apasionaba el mundo de la informática, siempre trasteando con ordenadores y tratando de entender como funcionaban. Al finalizar la ESO fui directo al grado medio de Informática donde descubrí el mundo de la programación, luego continué con el grado superior de Desarrollo de Aplicaciones Web en donde cursé el programa de Erasmus+ con prácticas en una empresa de Oporto. Al finalizar el grado superior, rápidamente ya empecé en <a href="#firstjob">mi primer trabajo</a>.<br><br>
+			Me apasiona la programación por varios motivos: poder crear algo de la nada y que además sea útil para otras personas, que horas y horas delante del ordenador pasen como si fueran minutos porque estás concentrado en tu tarea de programar, tener que estar en constante aprendizaje, poder trabajar en grupo y contribuir a la mejora del producto. Son solo algunas de las cosas que hacen que me encante programar.<br><br>
+			En 2022 me embarqué en la aventura de crear un SaaS que me ha hecho adquirir muchas habilidades y conocimientos. El SaaS ya está finalizado y es por eso que actualmente me encuentro en búsqueda activa de un puesto como programador donde seguir desarrollándome como profesional y poder aportar todo el conocimiento y ganas.
+		</p>
+	</div>
+	<div id="contact" class="flex flex-col w-full lg:w-[800px] mx-auto my-20 lg:my-36 scroll-m-12">
+		<h2 class="text-3xl lg:text-5xl uppercase text-blue-200/80 font-bold text-center">
+			Contactame<span class="text-white/80">.</span>
+		</h2>
+		<div class="flex flex-col mt-4 lg:mt-10 gap-2 items-center">
+			<a href="mailto:sergiolamorda@gmail.com" target="_blank">
+				<Button>
+					<div class="flex flex-row gap-2">
+						<GmailIcon class="size-5" /> <span class="text-sm">sergiolamorda@gmail.com</span>
+					</div>
+				</Button>
+			</a>
+			<div class="row">
+				<a href="https://www.linkedin.com/in/sergio-lamorda/" target="_blank">
+					<Button>
+						<div class="flex flex-row gap-2">
+							<LinkedinIcon class="size-5" /> <span class="text-sm">LinkedIn</span>
+						</div>
+					</Button>
+				</a>
+				<a href="https://github.com/sergiolamorda" target="_blank">
+					<Button>
+						<div class="flex flex-row gap-2">
+							<GithubIcon class="size-5" /> <span class="text-sm">GitHub</span>
+						</div>
+					</Button>
+				</a>
+			</div>
+		</div>
+	</div>
+</BaseLayout>
