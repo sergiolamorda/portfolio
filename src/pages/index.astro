@@ -307,7 +307,7 @@ const PROJECTS = [
 ---
 
 <BaseLayout>
-	<div class="flex flex-col w-full lg:w-[800px] mx-auto my-16 gap-4 items-center scroll-m-12">
+	<div class="flex flex-col w-full lg:w-[800px] mx-auto my-16 gap-4 items-center scroll-m-12 px-4 lg:px-0">
 		<img class="rounded-full size-36" src="/images/sergio-lamorda.webp" />
 		<p class="text-xl lg:text-2xl">
 			¡Hola, soy <span class="text-blue-200/80">Sergio</span>! 👋🏻
@@ -327,7 +327,7 @@ const PROJECTS = [
 			</a>
 		</div>
 	</div>
-	<div id="experience" class="flex flex-col w-full lg:w-[800px] mx-auto my-28 scroll-m-12">
+	<div id="experience" class="flex flex-col w-full lg:w-[800px] mx-auto my-28 scroll-m-12 px-4 lg:px-0">
 		<h2 class="text-3xl lg:text-5xl uppercase text-blue-200/80 font-bold lg:text-center">
 			Experiencia<span class="text-white/80">.</span>
 		</h2>
@@ -367,7 +367,7 @@ const PROJECTS = [
 			}
 		</div>
 	</div>
-	<div id="projects" class="flex flex-col w-full lg:w-[800px] mx-auto my-28 scroll-m-12">
+	<div id="projects" class="flex flex-col w-full lg:w-[800px] mx-auto my-28 scroll-m-12 px-4 lg:px-0">
 		<h2 class="text-3xl lg:text-5xl uppercase text-blue-200/80 font-bold lg:text-center">
 			Proyectos<span class="text-white/80">.</span>
 		</h2>
@@ -403,12 +403,12 @@ const PROJECTS = [
 						class="relative w-full"
 						data-carousel="static"
 					>
-						<div class="relative h-56 overflow-hidden rounded-lg md:h-[500px]">
+						<div class="relative overflow-hidden rounded-lg h-[320px] md:h-[500px]">
 							{project.images.map(({ url, alt }) => (
 								<div class="hidden duration-500 ease-in-out" data-carousel-item>
 									<img
 										src={url}
-										class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+										class="absolute block w-full rounded-lg -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
 										alt={alt}
 									/>
 								</div>
@@ -431,10 +431,10 @@ const PROJECTS = [
 							data-carousel-prev
 						>
 							<span
-								class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+								class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-gray-800/70 group-focus:outline-none"
 							>
 								<svg
-									class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+									class="w-4 h-4 text-gray-800 rtl:rotate-180"
 									aria-hidden="true"
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
@@ -456,10 +456,10 @@ const PROJECTS = [
 							data-carousel-next
 						>
 							<span
-								class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+							class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-gray-800/70 group-focus:outline-none"
 							>
 								<svg
-									class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+								class="w-4 h-4 text-gray-800 rtl:rotate-180"
 									aria-hidden="true"
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
@@ -480,7 +480,7 @@ const PROJECTS = [
 			))}
 		</div>
 	</div>
-	<div id="about" class="flex flex-col w-full lg:w-[800px] mx-auto my-28 scroll-m-12">
+	<div id="about" class="flex flex-col w-full lg:w-[800px] mx-auto my-28 scroll-m-12 px-4 lg:px-0">
 		<h2 class="text-3xl lg:text-5xl uppercase text-blue-200/80 font-bold lg:text-center">
 			Sobre mí<span class="text-white/80">.</span>
 		</h2>
@@ -490,7 +490,7 @@ const PROJECTS = [
 			En 2022 me embarqué en la aventura de crear un SaaS que me ha hecho adquirir muchas habilidades y conocimientos. El SaaS ya está finalizado y es por eso que actualmente me encuentro en búsqueda activa de un puesto como programador donde seguir desarrollándome como profesional y poder aportar todo el conocimiento y ganas.
 		</p>
 	</div>
-	<div id="contact" class="flex flex-col w-full lg:w-[800px] mx-auto my-20 lg:my-36 scroll-m-12">
+	<div id="contact" class="flex flex-col w-full lg:w-[800px] mx-auto my-20 lg:my-36 scroll-m-12 px-4 lg:px-0">
 		<h2 class="text-3xl lg:text-5xl uppercase text-blue-200/80 font-bold text-center">
 			Contactame<span class="text-white/80">.</span>
 		</h2>
