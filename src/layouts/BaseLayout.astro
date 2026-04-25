@@ -1,83 +1,314 @@
----
-import "@fontsource/poppins";
+﻿---
+import "@fontsource/space-grotesk/500.css";
+import "@fontsource/space-grotesk/700.css";
+import "@fontsource/manrope/400.css";
+import "@fontsource/manrope/500.css";
+import "@fontsource/manrope/700.css";
 
 import Footer from "../components/Footer.astro";
 
-const MENU_ITEMS = [
-  {
-    label: "Inicio",
-    link: "#home",
-  },
-  {
-    label: "Experiencia",
-    link: "#experience",
-  },
-  {
-    label: "Webs",
-    link: "#webs",
-  },
-  {
-    label: "Proyectos",
-    link: "#projects",
-  },
-  {
-    label: "Sobre mí",
-    link: "#about",
-  },
-  {
-    label: "Contacto",
-    link: "#contact",
-  },
+const menuItems = [
+  { label: "Inicio", link: "#home" },
+  { label: "Experiencia", link: "#experience" },
+  { label: "Webs", link: "#webs" },
+  { label: "Proyectos", link: "#projects" },
+  { label: "Sobre mí", link: "#about" },
+  { label: "Contacto", link: "#contact" },
 ];
 
-const { title } = Astro.props;
+const {
+  title = "Sergio Lamorda | Software Engineer",
+  description =
+    "Portfolio de Sergio Lamorda, software engineer especializado en producto digital, frontend de alto nivel y desarrollo end-to-end.",
+} = Astro.props;
 ---
 
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sergio Lamorda - Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f6f1e8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
   </head>
-  <body class="text-white/90 bg-neutral-950">
-    <div
-      class="absolute top-0 z-[-2] h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-    >
-    </div>
-    <nav id="home" class="w-full py-4 hidden lg:block">
-      <ul class="flex gap-8 justify-center text-lg">
-        {
-          MENU_ITEMS.map(({ label, link }) => (
-            <li>
-              <a href={link}>{label}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-    <slot />
+  <body>
+    <div class="site-background"></div>
+    <header class="sticky top-0 z-50 border-b border-[var(--line)] bg-[color:rgba(246,241,232,0.94)]">
+      <div class="container-shell flex items-center justify-between gap-6 py-4">
+        <a href="#home" class="flex items-center gap-3">
+          <span class="flex size-11 items-center justify-center rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] text-sm font-bold text-[var(--text)] shadow-sm">
+            SL
+          </span>
+          <span class="hidden sm:block">
+            <span class="block text-sm font-semibold text-[var(--text)]">Sergio Lamorda</span>
+            <span class="block text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
+              Software Engineer
+            </span>
+          </span>
+        </a>
+
+        <nav class="hidden items-center gap-6 md:flex">
+          {
+            menuItems.map(({ label, link }) => (
+              <a href={link} class="nav-link text-sm font-medium text-[var(--muted)]">
+                {label}
+              </a>
+            ))
+          }
+        </nav>
+
+        <a href="#contact" class="hidden rounded-full border border-[var(--line)] bg-[var(--surface-strong)] px-4 py-2 text-sm font-semibold text-[var(--text)] shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-[var(--accent)] md:inline-flex">
+          Hablemos
+        </a>
+      </div>
+
+      <div class="border-t border-[var(--line)] md:hidden">
+        <div class="container-shell no-scrollbar flex gap-4 overflow-x-auto py-3 text-sm text-[var(--muted)]">
+          {
+            menuItems.map(({ label, link }) => (
+              <a href={link} class="whitespace-nowrap rounded-full border border-[var(--line)] bg-[var(--surface-strong)] px-4 py-2">
+                {label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
     <Footer />
   </body>
 </html>
 
 <style is:global>
+  :root {
+    --bg: #f6f1e8;
+    --bg-alt: #fffaf2;
+    --surface: rgba(255, 251, 245, 0.92);
+    --surface-strong: rgba(255, 255, 255, 0.96);
+    --text: #122033;
+    --muted: rgba(18, 32, 51, 0.72);
+    --muted-strong: rgba(18, 32, 51, 0.88);
+    --accent: #0f9f94;
+    --accent-strong: #0a726f;
+    --accent-soft: rgba(15, 159, 148, 0.14);
+    --accent-2: #f97351;
+    --line: rgba(18, 32, 51, 0.12);
+    --shadow: 0 10px 32px rgba(18, 32, 51, 0.06);
+    --radius-xl: 28px;
+    --radius-lg: 22px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
   html,
   body {
     min-height: 100%;
   }
 
   html {
-    font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
+    background: var(--bg);
   }
 
   body {
+    margin: 0;
+    color: var(--text);
+    font-family: "Manrope", sans-serif;
+    background: transparent;
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  ::selection {
+    color: white;
+    background: var(--accent);
+  }
+
+  .container-shell {
+    width: min(1120px, calc(100% - 2rem));
+    margin-inline: auto;
+  }
+
+  .surface {
+    border: 1px solid var(--line);
+    background:
+      radial-gradient(circle at top left, rgba(249, 115, 81, 0.03), transparent 26%),
+      linear-gradient(180deg, rgba(255, 252, 247, 0.96) 0%, rgba(255, 249, 242, 0.92) 100%);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius-xl);
+  }
+
+  .surface-strong {
+    border: 1px solid var(--line);
+    background: var(--surface-strong);
+    box-shadow: 0 8px 24px rgba(18, 32, 51, 0.04);
+    border-radius: var(--radius-lg);
+  }
+
+  .section-kicker {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.625rem;
+    border-bottom: 1px solid rgba(18, 32, 51, 0.18);
+    padding: 0 0 0.4rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+  }
+
+  .section-kicker::before {
+    content: "";
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-top: 0.05rem;
+    border-radius: 999px;
+    background: var(--accent-2);
+  }
+
+  .pill,
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.58);
+    padding: 0.68rem 0.92rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--muted-strong);
+  }
+
+  .tag {
+    padding: 0.44rem 0.72rem;
+    font-size: 0.82rem;
+  }
+
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.45rem;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    transition: transform 180ms ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  .media-frame {
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(18, 32, 51, 0.08);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 239, 232, 0.72));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+
+  .note-block {
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    color: var(--muted-strong);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: revealUp 700ms cubic-bezier(0.21, 1, 0.32, 1) forwards;
+  }
+
+  .site-background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+      radial-gradient(circle at top left, rgba(249, 115, 81, 0.08), transparent 22%),
+      linear-gradient(180deg, #fbf5eb 0%, #f6f1e8 56%, #efe5d6 100%);
+  }
+
+  .site-background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(rgba(18, 32, 51, 0.035) 0.7px, transparent 0.7px),
+      radial-gradient(rgba(18, 32, 51, 0.022) 0.7px, transparent 0.7px);
+    background-position: 0 0, 13px 17px;
+    background-size: 22px 22px, 28px 28px;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  @keyframes revealUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
   }
 </style>
-
-<script>
-  import { initFlowbite } from "flowbite";
-
-  initFlowbite();
-</script>

@@ -1,149 +1,121 @@
----
+﻿---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Button from "../components/Button.astro";
 
-import VueIcon from "../icons/Vue.astro";
-import NextIcon from "../icons/Next.astro";
-import AstroIcon from "../icons/Astro.astro";
-import MongoIcon from "../icons/Mongo.astro";
-import NodeIcon from "../icons/Node.astro";
-import DockerIcon from "../icons/Docker.astro";
-import SvelteIcon from "../icons/Svelte.astro";
-import ReactIcon from "../icons/React.astro";
-import TailwindIcon from "../icons/Tailwind.astro";
 import AmazonWebServicesIcon from "../icons/AmazonWebServices.astro";
-import RedisIcon from "../icons/Redis.astro";
-import PHPIcon from "../icons/PHP.astro";
-import LaravelIcon from "../icons/Laravel.astro";
-import MysqlIcon from "../icons/Mysql.astro";
+import AstroIcon from "../icons/Astro.astro";
 import CodeIgniterIcon from "../icons/CodeIgniter.astro";
+import DockerIcon from "../icons/Docker.astro";
 import ExpressIcon from "../icons/Express.astro";
-import StripeIcon from "../icons/Stripe.astro";
-import WorldIcon from "../icons/World.astro";
-import ThreejsIcon from "../icons/Threejs.astro";
-import SocketsIcon from "../icons/Socketsio.astro";
 import GithubIcon from "../icons/Github.astro";
 import GmailIcon from "../icons/Gmail.astro";
+import LaravelIcon from "../icons/Laravel.astro";
 import LinkedinIcon from "../icons/Linkedin.astro";
-
-import { v4 as uuidv4 } from "uuid";
-import { manifest } from "astro:ssr-manifest";
-import Github from "../icons/Github.astro";
+import MongoIcon from "../icons/Mongo.astro";
+import MysqlIcon from "../icons/Mysql.astro";
+import NextIcon from "../icons/Next.astro";
+import NodeIcon from "../icons/Node.astro";
+import PHPIcon from "../icons/PHP.astro";
+import ReactIcon from "../icons/React.astro";
+import RedisIcon from "../icons/Redis.astro";
+import SocketsIcon from "../icons/Socketsio.astro";
+import StripeIcon from "../icons/Stripe.astro";
+import SvelteIcon from "../icons/Svelte.astro";
+import TailwindIcon from "../icons/Tailwind.astro";
+import ThreejsIcon from "../icons/Threejs.astro";
+import VueIcon from "../icons/Vue.astro";
+import WorldIcon from "../icons/World.astro";
 
 const TECHNOLOGIES = {
-  vue: {
-    name: "Vue",
-    icon: VueIcon,
-  },
-  next: {
-    name: "Next",
-    icon: NextIcon,
-  },
-  astro: {
-    name: "Astro",
-    icon: AstroIcon,
-  },
-  mongo: {
-    name: "Mongo",
-    icon: MongoIcon,
-  },
-  node: {
-    name: "Node",
-    icon: NodeIcon,
-  },
-  docker: {
-    name: "Docker",
-    icon: DockerIcon,
-  },
-  svelte: {
-    name: "Svelte",
-    icon: SvelteIcon,
-  },
-  react: {
-    name: "React",
-    icon: ReactIcon,
-  },
-  tailwind: {
-    name: "Tailwind",
-    icon: TailwindIcon,
-  },
-  aws: {
-    name: "Amazon Web Services",
-    icon: AmazonWebServicesIcon,
-  },
-  redis: {
-    name: "Redis",
-    icon: RedisIcon,
-  },
-  php: {
-    name: "PHP",
-    icon: PHPIcon,
-  },
-  laravel: {
-    name: "Laravel",
-    icon: LaravelIcon,
-  },
-  mysql: {
-    name: "MySQL",
-    icon: MysqlIcon,
-  },
-  codeigniter: {
-    name: "CodeIgniter",
-    icon: CodeIgniterIcon,
-  },
-  express: {
-    name: "Express",
-    icon: ExpressIcon,
-  },
-  stripe: {
-    name: "Stripe",
-    icon: StripeIcon,
-  },
-  three: {
-    name: "Three.js",
-    icon: ThreejsIcon,
-  },
-  sockets: {
-    name: "Sockets",
-    icon: SocketsIcon,
-  },
+  vue: { name: "Vue", icon: VueIcon },
+  next: { name: "Next.js", icon: NextIcon },
+  astro: { name: "Astro", icon: AstroIcon },
+  mongo: { name: "MongoDB", icon: MongoIcon },
+  node: { name: "Node.js", icon: NodeIcon },
+  docker: { name: "Docker", icon: DockerIcon },
+  svelte: { name: "Svelte", icon: SvelteIcon },
+  react: { name: "React", icon: ReactIcon },
+  tailwind: { name: "Tailwind", icon: TailwindIcon },
+  aws: { name: "AWS", icon: AmazonWebServicesIcon },
+  redis: { name: "Redis", icon: RedisIcon },
+  php: { name: "PHP", icon: PHPIcon },
+  laravel: { name: "Laravel", icon: LaravelIcon },
+  mysql: { name: "MySQL", icon: MysqlIcon },
+  codeigniter: { name: "CodeIgniter", icon: CodeIgniterIcon },
+  express: { name: "Express", icon: ExpressIcon },
+  stripe: { name: "Stripe", icon: StripeIcon },
+  three: { name: "Three.js", icon: ThreejsIcon },
+  sockets: { name: "Sockets.io", icon: SocketsIcon },
 };
+
+const HERO_TAGS = [
+  "Frontend",
+  "Producto",
+  "SaaS",
+  "Performance",
+  "Automation",
+  "IA con criterio",
+];
+
+const METRICS = [
+  { value: "+7", label: "años trabajando en producto digital" },
+  { value: "1", label: "SaaS propio llevado a producción" },
+  { value: "BCN", label: "Barcelona como base" },
+  { value: "E2E", label: "capaz de moverme por todo el stack" },
+];
+
+const FOCUS_AREAS = [
+  {
+    title: "Frontend que se entiende",
+    description:
+      "Me gusta que una interfaz se vea bien, pero sobre todo que se entienda, cargue rápido y siga siendo mantenible cuando el producto crece.",
+  },
+  {
+    title: "No me quedo en la capa visual",
+    description:
+      "He tocado APIs, despliegues, bases de datos, herramientas internas y producción. Eso me ayuda a tomar mejores decisiones también en frontend.",
+  },
+  {
+    title: "IA, pero sin humo",
+    description:
+      "Quiero enseñar más trabajo de automatización e IA, pero prefiero subir cosas útiles y reales antes que llenar el portfolio de demos vacías.",
+  },
+];
 
 const EXPERIENCES = [
   {
-    logo: "/images/acb.webp",
+    logo: "/images/acb-dark.jpg",
     company: "ACB",
     job: "Senior Frontend Engineer",
-    date: "Mayo 2024 - Actualidad",
+    date: "Mayo 2024 · Actualidad",
     description:
-      "Implementación de nuevo design system con buenas prácticas de desarrollo, creación y actualización de productos con tecnologías modernas para mejorar la experiencia de usuario, la velocidad de carga y la usabilidad manteniendo un código limpio y fácil de mantener.",
+      "Implementación de un nuevo design system, evolución de productos existentes y desarrollo de experiencias con mejor usabilidad, rendimiento y mantenibilidad.",
     technologies: [
       TECHNOLOGIES.next,
       TECHNOLOGIES.react,
       TECHNOLOGIES.astro,
-      TECHNOLOGIES.docker,
       TECHNOLOGIES.node,
       TECHNOLOGIES.tailwind,
       TECHNOLOGIES.vue,
       TECHNOLOGIES.aws,
       TECHNOLOGIES.redis,
       TECHNOLOGIES.mysql,
+      TECHNOLOGIES.docker,
     ],
   },
   {
     logo: "/images/driuz-iso.webp",
     company: "Driuz",
-    job: "Desarrollador y Diseñador en Driuz",
-    date: "Enero 2022 - Mayo 2024",
+    job: "Diseño y desarrollo de producto SaaS",
+    date: "Enero 2022 · Mayo 2024",
     description:
-      "Diseño de las funcionalidades y definición de los casos de uso de la aplicación. Desarrollo e implementación de las funcionalidades. Despliegue de la aplicación en producción. Administración y gestión de la base de datos. Diseño y desarrollo de la web del producto, posicionamiento SEO y diseño de landings.",
+      "Definición de casos de uso, diseño de pantallas, desarrollo full stack, despliegue en producción, gestión de base de datos y evolución del posicionamiento SEO del producto.",
     technologies: [
       TECHNOLOGIES.vue,
       TECHNOLOGIES.next,
       TECHNOLOGIES.node,
       TECHNOLOGIES.express,
       TECHNOLOGIES.mongo,
-      TECHNOLOGIES.docker,
       TECHNOLOGIES.react,
       TECHNOLOGIES.astro,
       TECHNOLOGIES.tailwind,
@@ -151,15 +123,16 @@ const EXPERIENCES = [
       TECHNOLOGIES.aws,
       TECHNOLOGIES.redis,
       TECHNOLOGIES.stripe,
+      TECHNOLOGIES.docker,
     ],
   },
   {
     logo: "/images/acrelianews-iso.webp",
     company: "Acrelia News",
-    job: "Desarrollador FullStack en Acrelia News",
-    date: "Febrero 2019 - Diciembre 2022",
+    job: "Desarrollador Full Stack",
+    date: "Febrero 2019 · Diciembre 2022",
     description:
-      "Diseño, análisis e implementación de nuevas funcionalidades para producto final: envíos masivos de SMS marketing, verificador de listas de emails, automatización email marketing. Desarrollo de nuevas funcionalidades para clientes finales.",
+      "Análisis, diseño e implementación de nuevas funcionalidades para email marketing, SMS marketing, verificación de listas y automatizaciones orientadas a producto final.",
     technologies: [
       TECHNOLOGIES.php,
       TECHNOLOGIES.laravel,
@@ -171,83 +144,70 @@ const EXPERIENCES = [
   {
     id: "firstjob",
     logo: "/images/telera-iso.webp",
-    company: "Teleradiología avanzada",
-    job: "Desarrollador FullStack en Teleradiología Avanzada",
-    date: "Junio 2018 - Febrero 2019",
+    company: "Teleradiología Avanzada",
+    job: "Desarrollador Full Stack",
+    date: "Junio 2018 · Febrero 2019",
     description:
-      "Implementación de nuevas funcionalidades. Soporte y mantenimiento de aplicación de teleradiología. Implementación de gestor de subida de pruebas médicas a través del navegador.",
-    technologies: [
-      TECHNOLOGIES.php,
-      TECHNOLOGIES.codeigniter,
-      TECHNOLOGIES.mysql,
-    ],
+      "Desarrollo de nuevas funcionalidades, soporte de aplicación de teleradiología e implementación de un gestor para la subida de pruebas médicas desde navegador.",
+    technologies: [TECHNOLOGIES.php, TECHNOLOGIES.codeigniter, TECHNOLOGIES.mysql],
   },
 ];
 
 const WEBS = [
   {
-    title: "DJ y productor de música",
+    title: "Pickly",
+    subtitle: "Portal editorial sobre pickleball en España",
+    image: "/images/webs/pickly.webp",
+    url: "https://pickly.es",
+    label: "Editorial sport",
+  },
+  {
+    title: "Feri Island",
+    subtitle: "Web promocional para DJ y productor musical",
     image: "/images/webs/ferisland.webp",
     url: "https://ferisland.com",
+    label: "Brand site",
   },
   {
-    title: "Infoproducto / SaaS",
+    title: "Driuz",
+    subtitle: "Web de producto para SaaS e infoproducto",
     image: "/images/webs/driuz.webp",
     url: "https://driuz-web.pages.dev",
+    label: "SaaS marketing",
   },
   {
-    title: "Gimnasio",
+    title: "Activats",
+    subtitle: "Landing enfocada en conversión para gimnasio",
     image: "/images/webs/gimnasio.webp",
     url: "https://activats-web.pages.dev",
+    label: "Landing page",
   },
   {
-    title: "Tienda online",
+    title: "Militar Shop",
+    subtitle: "Ecommerce de afiliación con catálogo y blog",
     image: "/images/webs/militar.webp",
     url: "http://militar.shop",
+    label: "Ecommerce",
   },
 ];
 
 const PROJECTS = [
   {
-    title: "SaaS para creadores de contenido y profesores · Driuz",
-    description: `
-			Driuz es el proyecto personal más importante de mi carrera como
-			desarrollador web. Son más de 2 años de desarrollo en los que he aprendido
-			muchísimas cosas, entre las que se encuentran: definir casos de uso, diseñar
-			pantallas en Figma, aprender a utilizar frameworks de frontend (Vue,
-			React, Next), codificación de video (ffmepg), diseño y desarrollo de API con Node,
-			bases de datos no relacionales (MongoDB), SEO, diseñar landings page, etc.
-			<br /><br />El proyecto se divide en 2 partes. La primera es el panel
-			de administración (Vue) donde los usuarios pueden crear su página web,
-			crear productos digitales como cursos online o video bajo demanda,
-			asignarles un precio y administrar sus clientes, entre otras muchas
-			cosas.
-			<br /><br />La segunda parte consiste en la web (Next), donde se
-			muestra todo lo que el usuario ha configurado en su panel de
-			administración, y es lo que el cliente utiliza para monetizar su
-			contenido, y donde sus usuarios van a registrarse y realizar compras.
-		`,
+    title: "Driuz",
+    type: "SaaS · producto propio",
+    summary:
+      "El proyecto personal más importante de mi carrera. Más de dos años construyendo un SaaS completo para creadores y profesores, desde la definición de casos de uso hasta la salida a producción.",
+    highlights: [
+      "Panel de administración donde los usuarios crean su web, productos digitales y operaciones de venta.",
+      "Frontend y web pública trabajados con Vue, Next y una capa de diseño orientada a producto.",
+      "Backend con Node.js, datos en MongoDB, despliegues en AWS, pagos con Stripe y múltiples capas de tooling alrededor del producto.",
+    ],
     images: [
-      {
-        url: "/images/projects-driuz.webp",
-        alt: "",
-      },
-      {
-        url: "/images/projects-driuz-2.webp",
-        alt: "",
-      },
-      {
-        url: "/images/projects-driuz-3.webp",
-        alt: "",
-      },
-      {
-        url: "/images/projects-driuz-4.webp",
-        alt: "",
-      },
-      {
-        url: "/images/projects-driuz-5.webp",
-        alt: "",
-      },
+      { url: "/images/projects-driuz.webp", alt: "Vista principal de Driuz" },
+      { url: "/images/projects-driuz-2.webp", alt: "Pantalla interna de Driuz" },
+      { url: "/images/projects-driuz-3.webp", alt: "Panel de producto de Driuz" },
+      { url: "/images/projects-driuz-4.webp", alt: "Pantalla de configuración en Driuz" },
+      { url: "/images/projects-driuz-5.webp", alt: "Vista adicional de Driuz" },
     ],
     links: {
       web: "https://driuz-web.pages.dev",
@@ -259,7 +219,6 @@ const PROJECTS = [
       TECHNOLOGIES.node,
       TECHNOLOGIES.express,
       TECHNOLOGIES.mongo,
-      TECHNOLOGIES.docker,
       TECHNOLOGIES.react,
       TECHNOLOGIES.astro,
       TECHNOLOGIES.tailwind,
@@ -267,34 +226,25 @@ const PROJECTS = [
       TECHNOLOGIES.aws,
       TECHNOLOGIES.redis,
       TECHNOLOGIES.stripe,
+      TECHNOLOGIES.docker,
     ],
   },
   {
-    title: "Web de afiliados con Laravel · MilitarShop",
-    description: `
-			MilitarShop es un proyecto personal desarrollado con Laravel. Cuenta con un panel de administración desde donde se puede añadir productos, categorías y artículos del blog de forma visual e intuitiva. También cuenta con scripts de scraping para actualizar automáticamente los precios y las imágenes de los productos.
-		`,
+    title: "Militar Shop",
+    type: "Afiliación · Laravel",
+    summary:
+      "Proyecto personal de afiliación construido con Laravel, panel de administración propio y una capa de automatización para actualizar catálogo, precios e imágenes.",
+    highlights: [
+      "Panel visual para gestionar productos, categorías y artículos del blog.",
+      "Scripts de scraping para mantener actualizados precios y recursos del catálogo.",
+      "Arquitectura orientada a negocio, SEO y monetización sostenida vía contenidos y afiliación.",
+    ],
     images: [
-      {
-        url: "/images/militarshop-1.webp",
-        alt: "",
-      },
-      {
-        url: "/images/militarshop-2.webp",
-        alt: "",
-      },
-      {
-        url: "/images/militarshop-3.webp",
-        alt: "",
-      },
-      {
-        url: "/images/militarshop-4.webp",
-        alt: "",
-      },
-      {
-        url: "/images/militarshop-5.webp",
-        alt: "",
-      },
+      { url: "/images/militarshop-1.webp", alt: "Vista principal de Militar Shop" },
+      { url: "/images/militarshop-2.webp", alt: "Listado de productos en Militar Shop" },
+      { url: "/images/militarshop-3.webp", alt: "Detalle visual de Militar Shop" },
+      { url: "/images/militarshop-4.webp", alt: "Sección adicional de Militar Shop" },
+      { url: "/images/militarshop-5.webp", alt: "Pantalla de Militar Shop" },
     ],
     links: {
       web: "http://militar.shop",
@@ -308,31 +258,21 @@ const PROJECTS = [
     ],
   },
   {
-    title: "Pinball 3D Multijugador · PinWall",
-    description: `
-			Pinball fué el trabajo final del Grado Superior de Desarrollo de Aplicaciones Web (30 días). El proyecto está desarrollado con Node.js, Sockets.io y Three.js. Se pueden crear nuevos escenarios de forma sencilla con Sketchup, y gracias al conversor se puede pasar los vértices a la librería de físicas (Plank.js). Cuenta con un modo multijugador, gracias a que las físicas corren en el servidor y un sistema de Ranking.
-		`,
+    title: "PinWall",
+    type: "Experimento técnico · tiempo real",
+    summary:
+      "Trabajo final del grado superior: un pinball 3D multijugador construido en 30 días, con físicas en servidor, ranking y pipeline para crear escenarios nuevos con rapidez.",
+    highlights: [
+      "Cliente renderizado con Three.js y servidor en Node.js + Sockets.io.",
+      "Modo multijugador con físicas ejecutándose en backend para mantener la sincronización.",
+      "Conversión de geometrías desde SketchUp para crear escenarios reutilizables y acelerar iteración.",
+    ],
     images: [
-      {
-        url: "/images/pinwall-1.webp",
-        alt: "",
-      },
-      {
-        url: "/images/pinwall-2.webp",
-        alt: "",
-      },
-      {
-        url: "/images/pinwall-3.webp",
-        alt: "",
-      },
-      {
-        url: "/images/pinwall-4.webp",
-        alt: "",
-      },
-      {
-        url: "/images/pinwall-5.webp",
-        alt: "",
-      },
+      { url: "/images/pinwall-1.webp", alt: "Vista principal de PinWall" },
+      { url: "/images/pinwall-2.webp", alt: "Gameplay de PinWall" },
+      { url: "/images/pinwall-3.webp", alt: "Escenario de PinWall" },
+      { url: "/images/pinwall-4.webp", alt: "Multijugador de PinWall" },
+      { url: "/images/pinwall-5.webp", alt: "Pantalla extra de PinWall" },
     ],
     links: {
       web: null,
@@ -347,306 +287,381 @@ const PROJECTS = [
     ],
   },
 ];
+
+const PROFILE_TECH = [
+  TECHNOLOGIES.react,
+  TECHNOLOGIES.next,
+  TECHNOLOGIES.vue,
+  TECHNOLOGIES.node,
+  TECHNOLOGIES.astro,
+  TECHNOLOGIES.tailwind,
+  TECHNOLOGIES.aws,
+  TECHNOLOGIES.mongo,
+];
+
+const CURRENTLY = [
+  "Estoy preparando proyectos nuevos con automatización e IA, pero quiero que sean piezas reales y no ejercicios de escaparate.",
+  "Me atraen roles donde producto, frontend y tooling interno se mezclen con uso práctico de IA.",
+  "Sigo valorando lo mismo de siempre: rendimiento, claridad, código mantenible y criterio visual.",
+];
 ---
 
-<BaseLayout>
-  <div
-    class="flex flex-col w-full lg:w-[800px] mx-auto my-16 gap-4 items-center scroll-m-12 px-4 lg:px-0"
-  >
-    <img class="rounded-full size-36" src="/images/sergio-lamorda.webp" />
-    <p class="text-xl lg:text-2xl">
-      ¡Hola, soy <span class="text-blue-200/80">Sergio</span>! 👋🏻
-    </p>
-    <h1 class="text-3xl lg:text-5xl font-bold text-center">
-      Programador <span class="text-blue-200/80">FullStack</span>
-    </h1>
-    <p class="lg:text-lg text-pretty text-center">
-      Soy desarrollador web con <span class="text-blue-200/80 font-bold"
-        >+7 años de experiencia</span
-      > profesional. Soy de Barcelona y me apasiona programar, aprender y seguir
-      afrontando nuevos retos.
-    </p>
-    <div class="flex">
-      <a href="#contact">
-        <Button>Contactar</Button>
-      </a>
-    </div>
-  </div>
-  <div
-    id="experience"
-    class="flex flex-col w-full lg:w-[800px] mx-auto my-28 scroll-m-12 px-4 lg:px-0"
-  >
-    <h2
-      class="text-3xl lg:text-5xl uppercase text-blue-200/80 font-bold lg:text-center"
-    >
-      Experiencia<span class="text-white/80">.</span>
-    </h2>
-    <div class="flex flex-col mt-4 lg:mt-10 gap-12">
-      {
-        EXPERIENCES.map(
-          ({ id, logo, company, job, date, description, technologies }) => (
-            <div id={id} class="flex flex-col gap-4">
-              <div class="flex flex-col lg:flex-row justify-between lg:items-center">
-                <div class="flex flex-row gap-2 items-center">
-                  <img
-                    src={logo}
-                    alt={`Logo of ${company}`}
-                    class="h-6 w-auto"
-                  />
-                  <h4 class="text-lg lg:text-xl font-bold text-white/80">
-                    {job}
-                  </h4>
-                </div>
-                <div class="flex flex-row text-sm text-blue-100/60">{date}</div>
-              </div>
-              <p class="text-blue-100/60 text-sm text-pretty">{description}</p>
-              <div class="flex flex-col gap-2">
-                <h5 class="text-blue-100/80 text-sm">Tecnologías</h5>
-                <div class="flex flex-row flex-wrap gap-x-0.5 gap-y-2">
-                  {technologies.map((tecnnology) => {
-                    const tooltipId = uuidv4();
-                    return (
-                      <span class="flex items-center gap-1 bg-blue-200/75 text-blue-900/90 text-xs font-bold me-2 px-2 py-1 rounded-full dark:bg-blue-900 dark:text-blue-300">
-                        <tecnnology.icon class="size-4" /> {tecnnology.name}
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          )
-        )
-      }
-    </div>
-  </div>
-  <div
-    id="webs"
-    class="flex flex-col w-full lg:w-[800px] mx-auto my-28 scroll-m-12 px-4 lg:px-0"
-  >
-    <h2
-      class="text-3xl lg:text-5xl uppercase text-blue-200/80 font-bold lg:text-center"
-    >
-      Webs<span class="text-white/80">.</span>
-    </h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4 lg:mt-10">
-      {
-        WEBS.map((web) => (
-          <div class="flex flex-col gap-2 group relative">
-            <img
-              src={web.image}
-              alt={web.title}
-              class="w-full rounded-lg object-contain aspect-video"
-            />
-            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-              <a href={web.url} target="_blank" class="group/link">
-                <Button>
-                  <div class="flex flex-row gap-2">
-                    <WorldIcon class="size-5" />
-                    <span class="text-sm">Visitar web</span>
-                  </div>
-                </Button>
-              </a>
-            </div>
-            <h4 class="text-lg lg:text-xl font-bold">{web.title}</h4>
-          </div>
-        ))
-      }
-    </div>
-    <div
-      id="projects"
-      class="flex flex-col w-full lg:w-[800px] mx-auto my-28 scroll-m-12 px-4 lg:px-0"
-    >
-      <h2
-        class="text-3xl lg:text-5xl uppercase text-blue-200/80 font-bold lg:text-center"
-      >
-        Proyectos<span class="text-white/80">.</span>
-      </h2>
-      <div class="flex flex-col mt-4 lg:mt-10 gap-14 lg:gap-20">
+<BaseLayout
+  title="Sergio Lamorda | Software Engineer"
+  description="Portfolio de Sergio Lamorda, software engineer con foco en frontend de alto nivel, producto digital y una evolución clara hacia automatización e IA aplicada."
+>
+  <section id="home" class="container-shell grid gap-8 pb-14 pt-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:pb-24 lg:pt-20">
+    <div class="reveal flex flex-col gap-6">
+      <span class="section-kicker">Barcelona · software engineer · producto digital</span>
+
+      <div class="space-y-5">
+        <p class="note-block max-w-2xl text-base leading-7">
+          No quiero que este portfolio parezca una colección de piezas generadas en serie. Prefiero enseñar trabajo real, cómo pienso y qué tipo de problemas me interesa resolver ahora.
+        </p>
+        <h1 class="max-w-4xl text-5xl sm:text-6xl lg:text-7xl">
+          Soy Sergio. Diseño y desarrollo producto digital, sobre todo frontend, y ahora estoy abriendo más espacio a automatización e IA útil.
+        </h1>
+        <p class="max-w-2xl text-lg leading-8 text-[var(--muted)] sm:text-xl">
+          Llevo más de 7 años trabajando en software. He pasado por producto deportivo, SaaS, email marketing, salud y proyectos propios. La parte que más se ve es el frontend, pero normalmente trabajo mejor cuando también entiendo el resto del sistema.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <Button href="#projects">Ver proyectos</Button>
+        <Button href="#contact" variant="secondary">Contactar</Button>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
         {
-          PROJECTS.map((project) => (
-            <div class="flex flex-col gap-4">
-              <div class="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-4 text-white/80">
-                <h4 class="text-lg lg:text-xl font-bold">{project.title}</h4>
-                {project.links.web && (
-                  <a href={project.links.web} target="_blank" class="group">
-                    <WorldIcon class="size-7 group-hover:scale-125 transition-all group-hover:text-white/90" />
-                  </a>
-                )}
-                {project.links.github && (
-                  <a href={project.links.github} target="_blank" class="group">
-                    <GithubIcon class="size-7 group-hover:scale-125 transition-all group-hover:text-white/90" />
-                  </a>
-                )}
-              </div>
-              <p
-                class="text-blue-100/60 text-sm text-pretty"
-                set:html={project.description}
-              />
-              <div class="flex flex-col gap-2">
-                <h5 class="text-blue-100/80 text-sm">Tecnologías</h5>
-                <div class="flex flex-row flex-wrap gap-x-0.5 gap-y-2">
-                  {project.technologies.map((tecnnology) => {
-                    return (
-                      <span class="flex items-center gap-1 bg-blue-200/75 text-blue-900/90 text-xs font-bold me-2 px-2 py-1 rounded-full dark:bg-blue-900 dark:text-blue-300">
-                        <tecnnology.icon class="size-4" /> {tecnnology.name}
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-              <div
-                id="default-carousel"
-                class="relative w-full"
-                data-carousel="static"
-              >
-                <div class="relative overflow-hidden rounded-lg h-[320px] md:h-[500px]">
-                  {project.images.map(({ url, alt }) => (
-                    <div
-                      class="hidden duration-500 ease-in-out"
-                      data-carousel-item
-                    >
-                      <img
-                        src={url}
-                        class="absolute block w-full rounded-lg -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt={alt}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                  {project.images.map((image, index) => (
-                    <button
-                      type="button"
-                      class="w-3 h-3 rounded-full"
-                      aria-current={index === 0 ? "true" : "false"}
-                      aria-label={`Slide ${index + 1}`}
-                      data-carousel-slide-to={index}
-                    />
-                  ))}
-                </div>
-                <button
-                  type="button"
-                  class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                  data-carousel-prev
-                >
-                  <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg
-                      class="w-4 h-4 text-gray-800 rtl:rotate-180"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 6 10"
-                    >
-                      <path
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 1 1 5l4 4"
-                      />
-                    </svg>
-                    <span class="sr-only">Previous</span>
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                  data-carousel-next
-                >
-                  <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg
-                      class="w-4 h-4 text-gray-800 rtl:rotate-180"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 6 10"
-                    >
-                      <path
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="m1 9 4-4-4-4"
-                      />
-                    </svg>
-                    <span class="sr-only">Next</span>
-                  </span>
-                </button>
-              </div>
-            </div>
+          HERO_TAGS.map((tag) => (
+            <span class="tag">{tag}</span>
           ))
         }
       </div>
     </div>
-    <div
-      id="about"
-      class="flex flex-col w-full lg:w-[800px] mx-auto my-28 scroll-m-12 px-4 lg:px-0"
-    >
-      <h2
-        class="text-3xl lg:text-5xl uppercase text-blue-200/80 font-bold lg:text-center"
-      >
-        Sobre mí<span class="text-white/80">.</span>
-      </h2>
-      <p class="text-blue-100/60 text-sm text-pretty mt-5">
-        Desde pequeño tenía claro que me apasionaba el mundo de la informática,
-        siempre trasteando con ordenadores y tratando de entender como
-        funcionaban. Al finalizar la ESO fui directo al grado medio de
-        Informática donde descubrí el mundo de la programación, luego continué
-        con el grado superior de Desarrollo de Aplicaciones Web en donde cursé
-        el programa de Erasmus+ con prácticas en una empresa de Oporto. Al
-        finalizar el grado superior, rápidamente ya empecé en <a
-          href="#firstjob">mi primer trabajo</a
-        >.<br /><br />
-        Me apasiona la programación por varios motivos: poder crear algo de la nada
-        y que además sea útil para otras personas, que horas y horas delante del
-        ordenador pasen como si fueran minutos porque estás concentrado en tu tarea
-        de programar, tener que estar en constante aprendizaje, poder trabajar en
-        grupo y contribuir a la mejora del producto. Son solo algunas de las cosas
-        que hacen que me encante programar.<br /><br />
-        En 2022 me embarqué en la aventura de crear un SaaS que me ha hecho adquirir
-        muchas habilidades y conocimientos. El SaaS ya está finalizado y es por eso
-        que actualmente me encuentro en búsqueda activa de un puesto como programador
-        donde seguir desarrollándome como profesional y poder aportar todo el conocimiento
-        y ganas.
-      </p>
-    </div>
-    <div
-      id="contact"
-      class="flex flex-col w-full lg:w-[800px] mx-auto my-20 lg:my-36 scroll-m-12 px-4 lg:px-0"
-    >
-      <h2
-        class="text-3xl lg:text-5xl uppercase text-blue-200/80 font-bold text-center"
-      >
-        Contáctame<span class="text-white/80">.</span>
-      </h2>
-      <div class="flex flex-col mt-4 lg:mt-10 gap-2 items-center">
-        <a href="mailto:sergiolamorda@gmail.com" target="_blank">
-          <Button>
-            <div class="flex flex-row gap-2">
-              <GmailIcon class="size-5" />
-              <span class="text-sm">sergiolamorda@gmail.com</span>
+
+    <div class="reveal" style="animation-delay: 120ms;">
+      <article class="surface relative overflow-hidden p-5 sm:p-6">
+        <div class="relative flex flex-col gap-6">
+          <div class="flex items-start justify-between gap-4">
+            <div class="space-y-2">
+              <p class="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--accent-strong)]">Perfil</p>
+              <h2 class="text-2xl sm:text-3xl">Frontend fuerte, pero no solo frontend</h2>
             </div>
-          </Button>
-        </a>
-        <div class="row">
-          <a href="https://www.linkedin.com/in/sergio-lamorda/" target="_blank">
-            <Button>
-              <div class="flex flex-row gap-2">
-                <LinkedinIcon class="size-5" />
-                <span class="text-sm">LinkedIn</span>
-              </div>
-            </Button>
-          </a>
-          <a href="https://github.com/sergiolamorda" target="_blank">
-            <Button>
-              <div class="flex flex-row gap-2">
-                <GithubIcon class="size-5" />
-                <span class="text-sm">GitHub</span>
-              </div>
-            </Button>
-          </a>
+            <img
+              class="size-20 rounded-[26px] border border-[var(--line)] object-cover shadow-lg"
+              src="/images/sergio-lamorda.webp"
+              alt="Retrato de Sergio Lamorda"
+            />
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            {
+              METRICS.map(({ value, label }) => (
+                <div class="surface-strong p-4">
+                  <p class="text-2xl font-bold text-[var(--text)] sm:text-3xl">{value}</p>
+                  <p class="mt-2 text-sm leading-6 text-[var(--muted)]">{label}</p>
+                </div>
+              ))
+            }
+          </div>
+
+          <div class="space-y-3">
+            <p class="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--accent-strong)]">Stack habitual</p>
+            <div class="flex flex-wrap gap-2">
+              {
+                PROFILE_TECH.map((technology) => (
+                  <span class="tag">
+                    <technology.icon class="size-4" />
+                    {technology.name}
+                  </span>
+                ))
+              }
+            </div>
+          </div>
+
+          <p class="note-block text-sm leading-7 sm:text-base">
+            Mi siguiente paso no es “hacer una web de IA”. Es enseñar mejor el tipo de ingeniería que me interesa: automatización, tooling y producto con criterio.
+          </p>
         </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="container-shell pb-8 lg:pb-16">
+    <div class="reveal flex flex-col gap-8">
+      <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div class="space-y-4">
+          <span class="section-kicker">Lo que mejor se me da</span>
+          <h2 class="max-w-2xl text-4xl sm:text-5xl">No me gusta separar diseño, frontend y producto como si no se tocaran.</h2>
+        </div>
+        <p class="max-w-xl text-base leading-7 text-[var(--muted)] sm:text-lg">
+          Mi valor suele estar en el cruce: una interfaz que tenga sentido, una implementación limpia y una visión bastante realista de cómo eso afecta al producto y al negocio.
+        </p>
+      </div>
+
+      <div class="grid gap-4 lg:grid-cols-3">
+        {
+          FOCUS_AREAS.map((area, index) => (
+            <article class="surface reveal p-6 sm:p-7" style={`animation-delay: ${120 + index * 80}ms;`}>
+              <div class="space-y-4">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">0{index + 1}</p>
+                <h3 class="text-2xl sm:text-[2rem]">{area.title}</h3>
+                <p class="text-base leading-7 text-[var(--muted)]">{area.description}</p>
+              </div>
+            </article>
+          ))
+        }
       </div>
     </div>
-  </div>
+  </section>
+
+  <section id="experience" class="container-shell py-16 lg:py-24">
+    <div class="reveal flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div class="space-y-4">
+        <span class="section-kicker">Experiencia</span>
+        <h2 class="max-w-2xl text-4xl sm:text-5xl">Sitios distintos, mismo patrón: producto real y trabajo en producción.</h2>
+      </div>
+      <p class="max-w-xl text-base leading-7 text-[var(--muted)] sm:text-lg">
+        He pasado por SaaS, marketing automation, salud y producto deportivo. Me interesa enseñar esta parte porque explica mejor mi perfil que cualquier lista de tecnologías.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-5">
+      {
+        EXPERIENCES.map(({ id, logo, company, job, date, description, technologies }, index) => (
+          <article id={id} class="surface reveal grid gap-5 p-6 lg:grid-cols-[auto_1fr_auto] lg:items-start lg:p-7" style={`animation-delay: ${80 + index * 70}ms;`}>
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--line)] bg-white/80 p-3 shadow-sm">
+              <img src={logo} alt={`Logo de ${company}`} class="max-h-8 w-auto" />
+            </div>
+
+            <div class="space-y-4">
+              <div class="space-y-2">
+                <p class="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--accent-strong)]">{company}</p>
+                <h3 class="text-2xl sm:text-[2rem]">{job}</h3>
+                <p class="max-w-3xl text-base leading-7 text-[var(--muted)]">{description}</p>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                {
+                  technologies.map((technology) => (
+                    <span class="tag">
+                      <technology.icon class="size-4" />
+                      {technology.name}
+                    </span>
+                  ))
+                }
+              </div>
+            </div>
+
+            <p class="text-sm font-medium text-[var(--muted)] lg:pt-1 lg:text-right">{date}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section id="webs" class="container-shell py-16 lg:py-24">
+    <div class="reveal flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div class="space-y-4">
+        <span class="section-kicker">Webs y landings</span>
+        <h2 class="max-w-2xl text-4xl sm:text-5xl">También me gusta cuando una web tiene que vender algo y no solo verse bonita.</h2>
+      </div>
+      <p class="max-w-xl text-base leading-7 text-[var(--muted)] sm:text-lg">
+        Aquí hay piezas más orientadas a comunicación, branding y conversión. Me interesa mantenerlas porque muestran una parte del criterio visual que luego también aplico en producto.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-5 md:grid-cols-2">
+      {
+        WEBS.map((web, index) => (
+          <a href={web.url} target="_blank" rel="noreferrer" class="group reveal" style={`animation-delay: ${100 + index * 70}ms;`}>
+            <article class="surface overflow-hidden p-4 sm:p-5">
+              <div class="media-frame aspect-[16/10] overflow-hidden">
+                <img
+                  src={web.image}
+                  alt={web.title}
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div class="flex flex-col gap-3 px-1 pb-1 pt-5">
+                <div class="flex items-center justify-between gap-4">
+                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">{web.label}</p>
+                  <WorldIcon class="size-6 text-[var(--accent-strong)] transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </div>
+                <div class="space-y-2">
+                  <h3 class="text-2xl">{web.title}</h3>
+                  <p class="text-base leading-7 text-[var(--muted)]">{web.subtitle}</p>
+                </div>
+              </div>
+            </article>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section id="projects" class="container-shell py-16 lg:py-24">
+    <div class="reveal flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div class="space-y-4">
+        <span class="section-kicker">Proyectos seleccionados</span>
+        <h2 class="max-w-2xl text-4xl sm:text-5xl">Estos proyectos explican bastante mejor cómo trabajo que un CV.</h2>
+      </div>
+      <p class="max-w-xl text-base leading-7 text-[var(--muted)] sm:text-lg">
+        He dejado proyectos distintos a propósito: un SaaS propio, una web de afiliación con automatización detrás y un proyecto técnico de tiempo real. Lo siguiente que vaya entrando estará más cerca de IA y tooling.
+      </p>
+    </div>
+
+    <div class="mt-10 flex flex-col gap-8">
+      {
+        PROJECTS.map((project, index) => (
+          <article class="surface reveal overflow-hidden p-5 sm:p-6 lg:p-7" style={`animation-delay: ${100 + index * 80}ms;`}>
+            <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+              <div class="flex flex-col gap-5">
+                <div class="flex flex-wrap items-start justify-between gap-4">
+                  <div class="space-y-3">
+                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">{project.type}</p>
+                    <h3 class="text-3xl sm:text-4xl">{project.title}</h3>
+                  </div>
+
+                  <div class="flex items-center gap-2">
+                    {
+                      project.links.web && (
+                        <Button href={project.links.web} target="_blank" rel="noreferrer" variant="secondary" class="!px-4 !py-2.5">
+                          <WorldIcon class="size-4" />
+                          Ver web
+                        </Button>
+                      )
+                    }
+                    {
+                      project.links.github && (
+                        <Button href={project.links.github} target="_blank" rel="noreferrer" variant="secondary" class="!px-4 !py-2.5">
+                          <GithubIcon class="size-4" />
+                          GitHub
+                        </Button>
+                      )
+                    }
+                  </div>
+                </div>
+
+                <p class="text-base leading-7 text-[var(--muted)] sm:text-lg">{project.summary}</p>
+
+                <ul class="grid gap-3">
+                  {
+                    project.highlights.map((highlight) => (
+                      <li class="flex gap-3">
+                        <span class="mt-2 h-2.5 w-2.5 rounded-full bg-[var(--accent)]"></span>
+                        <span class="text-sm leading-7 text-[var(--muted-strong)] sm:text-base">{highlight}</span>
+                      </li>
+                    ))
+                  }
+                </ul>
+
+                <div class="flex flex-wrap gap-2 pt-1">
+                  {
+                    project.technologies.map((technology) => (
+                      <span class="tag">
+                        <technology.icon class="size-4" />
+                        {technology.name}
+                      </span>
+                    ))
+                  }
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                {
+                  project.images.map(({ url, alt }, imageIndex) => (
+                    <div class:list={[
+                      "media-frame overflow-hidden",
+                      imageIndex === 0 ? "col-span-2 aspect-[16/10]" : "aspect-[4/3]",
+                    ]}>
+                      <img
+                        src={url}
+                        alt={alt}
+                        class="h-full w-full object-contain bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(246,241,232,0.7))] p-2 sm:p-3"
+                      />
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section id="about" class="container-shell py-16 lg:py-24">
+    <div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+      <article class="surface reveal p-6 sm:p-8">
+        <div class="space-y-5">
+          <span class="section-kicker">Sobre mí</span>
+          <h2 class="text-4xl sm:text-5xl">Me gusta programar por la parte técnica, pero también por lo que te deja construir.</h2>
+          <p class="text-base leading-8 text-[var(--muted)] sm:text-lg">
+            Empecé muy pronto en informática y seguí el camino de FP hasta entrar en el mercado laboral. Desde entonces he ido acumulando experiencia en frontend, backend, sistemas, producto y diseño visual. Esa mezcla es la que hoy define cómo trabajo.
+          </p>
+          <p class="text-base leading-8 text-[var(--muted)] sm:text-lg">
+            En 2022 me lancé a construir mi propio SaaS y eso me obligó a aprender mucho más allá del código: decisiones de producto, arquitectura, despliegues, SEO, monetización y comunicación visual. Seguramente es la experiencia que más me ha hecho crecer.
+          </p>
+          <p class="text-base leading-8 text-[var(--muted)] sm:text-lg">
+            Ahora quiero que la siguiente etapa del portfolio enseñe mejor una capa nueva: automatización e IA, sí, pero aterrizada a software útil y no a promesas vacías.
+          </p>
+        </div>
+      </article>
+
+      <article class="surface reveal p-6 sm:p-8" style="animation-delay: 120ms;">
+        <div class="space-y-5">
+          <span class="section-kicker">Ahora mismo</span>
+          <h2 class="text-4xl sm:text-5xl">Lo siguiente que suba aquí ya no irá solo de webs.</h2>
+          <div class="grid gap-4">
+            {
+              CURRENTLY.map((item, index) => (
+                <div class="surface-strong flex gap-4 p-4">
+                  <span class="pt-0.5 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">0{index + 1}</span>
+                  <p class="text-sm leading-7 text-[var(--muted-strong)] sm:text-base">{item}</p>
+                </div>
+              ))
+            }
+          </div>
+          <a href="#firstjob" class="inline-flex w-fit text-sm font-semibold text-[var(--accent-strong)] transition hover:text-[var(--accent)]">
+            Ver desde dónde empezó todo
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="container-shell pb-20 pt-10 lg:pb-24">
+    <article class="surface reveal relative overflow-hidden p-6 sm:p-8 lg:p-10">
+      <div class="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+        <div class="space-y-5">
+          <span class="section-kicker">Contacto</span>
+          <h2 class="max-w-3xl text-4xl sm:text-5xl lg:text-6xl">
+            Si encajo en el tipo de producto o equipo que tienes en mente, escríbeme.
+          </h2>
+          <p class="max-w-2xl text-base leading-8 text-[var(--muted)] sm:text-lg">
+            Me interesan especialmente equipos de producto, tooling interno y software donde frontend, ingeniería y automatización se mezclen de forma natural.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
+          <Button href="mailto:sergiolamordacontacto@gmail.com" class="w-full sm:w-auto lg:w-full">
+            <GmailIcon class="size-4" />
+            sergiolamordacontacto@gmail.com
+          </Button>
+          <div class="flex gap-3">
+            <Button href="https://www.linkedin.com/in/sergio-lamorda/" target="_blank" rel="noreferrer" variant="secondary" class="w-full flex-1">
+              <LinkedinIcon class="size-4" />
+              LinkedIn
+            </Button>
+            <Button href="https://github.com/sergiolamorda" target="_blank" rel="noreferrer" variant="secondary" class="w-full flex-1">
+              <GithubIcon class="size-4" />
+              GitHub
+            </Button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
 </BaseLayout>

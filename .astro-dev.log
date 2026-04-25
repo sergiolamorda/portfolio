@@ -1,0 +1,35 @@
+
+> dev
+> astro dev --host 0.0.0.0 --port 4321
+
+
+ astro  v4.5.16 ready in 871 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  http://192.168.56.1:4321/
+           http://192.168.1.135:4321/
+           http://192.168.32.1:4321/
+
+18:04:56 watching for file changes...
+18:05:44 [200] / 29ms
+18:07:25 [watch] src/pages/index.astro
+18:07:26 [200] / 21ms
+18:10:35 [watch] src/pages/index.astro
+18:10:37 [200] / 12ms
+18:11:46 [watch] src/pages/index.astro
+18:11:48 [200] / 7ms
+18:16:42 [watch] src/layouts/BaseLayout.astro
+18:16:43 [200] / 14ms
+18:16:47 [watch] src/layouts/BaseLayout.astro
+18:16:47 [200] / 17ms
+18:16:49 [404] /.well-known/appspecific/com.chrome.devtools.json 1ms
+18:20:07 [200] / 10ms
+18:21:45 [watch] src/layouts/BaseLayout.astro
+18:21:47 [200] / 17ms
+18:22:14 [watch] src/pages/index.astro
+18:22:15 [200] / 12ms
+18:22:59 [watch] src/pages/index.astro
+18:23:00 [200] / 13ms
+18:25:06 [200] / 14ms
+18:30:36 [200] / 14ms
+18:30:48 [200] / 14ms
