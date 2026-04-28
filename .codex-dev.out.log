@@ -1,0 +1,12 @@
+
+> dev
+> astro dev --host 0.0.0.0 --port 4321
+
+
+ astro  v4.5.16 ready in 767 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  http://192.168.1.221:4321/
+
+19:14:18 watching for file changes...
+19:14:23 [200] / 45ms
