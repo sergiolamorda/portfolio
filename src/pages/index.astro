@@ -64,24 +64,6 @@ const METRICS = [
   { value: "E2E", label: "capaz de moverme por todo el stack" },
 ];
 
-const FOCUS_AREAS = [
-  {
-    title: "Frontend que se entiende",
-    description:
-      "Me gusta que una interfaz se vea bien, pero sobre todo que se entienda, cargue rápido y siga siendo mantenible cuando el producto crece.",
-  },
-  {
-    title: "No me quedo en la capa visual",
-    description:
-      "He tocado APIs, despliegues, bases de datos, herramientas internas y producción. Eso me ayuda a tomar mejores decisiones también en frontend.",
-  },
-  {
-    title: "Automatización aplicada",
-    description:
-      "Me interesa usar automatización e IA como una capa práctica del producto: reducir fricción, mejorar flujos internos y construir herramientas que realmente ahorren trabajo.",
-  },
-];
-
 const EXPERIENCES = [
   {
     logo: "/images/acb-dark.jpg",
@@ -416,42 +398,14 @@ const CURRENTLY = [
     </div>
   </section>
 
-  <section class="container-shell pb-8 lg:pb-16">
-    <div class="reveal flex flex-col gap-8">
-      <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-        <div class="space-y-4">
-          <span class="section-kicker">Lo que mejor se me da</span>
-          <h2 class="max-w-2xl text-4xl sm:text-5xl">No me gusta separar diseño, frontend y producto como si no se tocaran.</h2>
-        </div>
-        <p class="max-w-xl text-base leading-7 text-[var(--muted)] sm:text-lg">
-          Mi valor suele estar en el cruce: una interfaz que tenga sentido, una implementación limpia y una visión bastante realista de cómo eso afecta al producto y al negocio.
-        </p>
-      </div>
-
-      <div class="grid gap-4 lg:grid-cols-3">
-        {
-          FOCUS_AREAS.map((area, index) => (
-            <article class="surface reveal p-6 sm:p-7" style={`animation-delay: ${120 + index * 80}ms;`}>
-              <div class="space-y-4">
-                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">0{index + 1}</p>
-                <h3 class="text-2xl sm:text-[2rem]">{area.title}</h3>
-                <p class="text-base leading-7 text-[var(--muted)]">{area.description}</p>
-              </div>
-            </article>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
   <section id="experience" class="container-shell py-16 lg:py-24">
     <div class="reveal flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
       <div class="space-y-4">
         <span class="section-kicker">Experiencia</span>
-        <h2 class="max-w-2xl text-4xl sm:text-5xl">Sitios distintos, mismo patrón: producto real y trabajo en producción.</h2>
+        <h2 class="max-w-2xl text-4xl sm:text-5xl">Sitios distintos, mismo patrón: producto propio y trabajo en producción.</h2>
       </div>
       <p class="max-w-xl text-base leading-7 text-[var(--muted)] sm:text-lg">
-        He pasado por SaaS, marketing automation, salud y producto deportivo. Me interesa enseñar esta parte porque explica mejor mi perfil que cualquier lista de tecnologías.
+        He pasado por SaaS de salud, una plataforma de email marketing, producto deportivo e incluso por crear un SaaS propio con todo lo que conlleva. Todo tiene algo en común: empresas de producto, usuarios reales y decisiones que afectan al negocio.
       </p>
     </div>
 
